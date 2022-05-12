@@ -1,5 +1,7 @@
+import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { NavigationModule } from '../navigation/navigation.module';
+import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
 
 
@@ -9,7 +11,9 @@ import { HomeComponent } from './home.component';
     HomeComponent
   ],
   imports: [
+    CommonModule,
     NavigationModule,
+    HomeRoutingModule
   ],
   exports: [
     HomeComponent

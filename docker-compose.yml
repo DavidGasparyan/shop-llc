@@ -1,0 +1,35 @@
+version: '3'
+services:
+  db:
+    image: mysql
+    restart: unless-stopped
+    container_name: store-mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=store
+      - MYSQL_USER=david
+      - MYSQL_PASSWORD=123456
+    ports:
+      - 4002:3306
+  store-front:
+    build:
+      context: ./
+      dockerfile: front.Dockerfile
+    ports:
+      - 4003:80
+  store-api:
+    build:
+      context: ./
+      dockerfile: api.Dockerfile
+    depends_on:
+      - db
+    ports:
+      - 4001:4001
+    environment:
+      - DB_HOST=db
+      - DB_USER=david
+      - DB_PASSWORD=123456
+      - DB_NAME=store
+      - DB_PORT=3306
+    stdin_open: true
+    tty: true

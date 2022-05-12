@@ -1,0 +1,22 @@
+.list {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    padding: 2rem;
+    margin: 0;
+    
+    &--vertical {
+        flex-direction: column;
+    }
+
+    &__item {
+        font-size: 1.6rem;
+
+        &:not(:last-child) {
+            margin-right: 20px;
+        }
+
+    }
+
+
+}

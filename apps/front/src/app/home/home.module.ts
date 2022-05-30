@@ -1,8 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { NavigationModule } from '../navigation/navigation.module';
 import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
+import {HeaderModule} from "../header/header.module";
 
 
 
@@ -12,8 +12,8 @@ import { HomeComponent } from './home.component';
   ],
   imports: [
     CommonModule,
-    NavigationModule,
-    HomeRoutingModule
+    HomeRoutingModule,
+    HeaderModule,
   ],
   exports: [
     HomeComponent

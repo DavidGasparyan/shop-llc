@@ -1,22 +1,16 @@
 <nav>
   <ul class="list navigation">
-    <li class="list__item navigation__item">
-      <span class="navigation__text">New</span>
-    </li>
-    <li class="list__item navigation__item">
-      <span class="navigation__text">Woman</span>
-    </li>
-    <li class="list__item navigation__item">
-      <span class="navigation__text">Men</span>
-    </li>
-    <li class="list__item navigation__item">
-      <span class="navigation__text">Kids</span>
-    </li>
-    <li class="list__item navigation__item">
-      <span class="navigation__text">Brands</span>
-    </li>
-    <li class="list__item navigation__item">
-      <span class="navigation__text">Sale</span>
+    <li
+      *ngFor="let item of arr" class="list__item"
+    >
+      <a
+        shopLlcNavButton
+        [isOpen]="false"
+        class="navigation__item">
+        <span
+          class="navigation__text"
+        >{{item}}</span>
+      </a>
     </li>
   </ul>
 </nav>

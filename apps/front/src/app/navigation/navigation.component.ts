@@ -9,6 +9,18 @@ import { Component, OnInit } from '@angular/core';
   ],
 })
 export class NavigationComponent implements OnInit {
+  arr: string[] = [
+    'New',
+    'Woman',
+    'Men',
+    'Kids',
+    'Departments',
+    'Brands',
+    'Sale',
+    'Clothing',
+  ];
+
+
   constructor() {}
 
   ngOnInit(): void {}

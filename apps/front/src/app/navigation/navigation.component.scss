@@ -23,18 +23,8 @@
       transform: rotate(-180deg);
       top: 40%;
     }
-  }
 
-  &__text {
-    display: block;
-    position: relative;
-    padding: 1.2rem 1.6rem 1.4rem 1.2rem;
-
-    &:hover {
-      cursor: pointer;
-    }
-
-    &::after {
+    &::before {
       content: "";
       position: absolute;
       display: block;
@@ -46,8 +36,19 @@
       background: #003953;
     }
 
-    &:hover::after {
+    &:hover::before,
+    &[aria-expanded=true]::before {
       width: 100%;
+    }
+  }
+
+  &__text {
+    display: block;
+    position: relative;
+    padding: 1.2rem 1.6rem 1.4rem 1.2rem;
+
+    &:hover {
+      cursor: pointer;
     }
   }
 }

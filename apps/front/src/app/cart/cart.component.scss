@@ -1,0 +1,23 @@
+.cart {
+  display: block;
+  padding: 1rem 1rem 1rem .8rem;
+  border: 2px solid #a7e688;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &::after {
+    content: "";
+    background-image: url(https://m.media-amazon.com/images/G/01/zappos/melody/melody-sprite.2021.09.16._TTH_.svg);
+    background-repeat: no-repeat;
+    width: 19px;
+    height: 17px;
+    background-position: -5px -5px;
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 10px;
+    transform: scale(1);
+    transition: transform .25s ease-in-out;
+  }
+}

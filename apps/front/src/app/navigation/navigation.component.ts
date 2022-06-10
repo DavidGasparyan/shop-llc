@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'shop-llc-navigation',
@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
     '../../assets/shared/components/list.scss',
     './navigation.component.scss',
   ],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class NavigationComponent implements OnInit {
   arr: string[] = [

@@ -4,10 +4,8 @@ import {Directive, ElementRef, HostBinding, HostListener, Input} from '@angular/
   selector: '[shopLlcNavButton]'
 })
 export class NavButtonDirective {
-  // private isOpen = false;
-
-  @HostBinding('attr.aria-expanded')
   @Input()
+  @HostBinding('attr.aria-expanded')
   public isOpen!: boolean;
 
   constructor(private eleRef: ElementRef) { }
@@ -17,4 +15,13 @@ export class NavButtonDirective {
     this.isOpen = !this.isOpen;
   }
 
+  /*
+    Close the highlighting if user clicks outside of nav item element
+   */
+  @HostListener('document:mousedown', ["$event"])
+  public onGlobalClick(event: MouseEvent):void {
+    if (!this.eleRef.nativeElement.contains(event.target)) {
+      this.isOpen = false;
+    }
+  }
 }
